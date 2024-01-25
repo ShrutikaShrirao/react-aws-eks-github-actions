@@ -18,9 +18,9 @@ jobs:
       - name: Docker build and push
         run: |
           docker build -t react-aws-eks-github-actions .
-          docker tag react-aws-eks-github-actions codewithmuh/react-aws-eks-github-actions:latest
+          docker tag react-aws-eks-github-actions vaishnaviisasre19/react-aws-eks-github-actions:latest
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-          docker push codewithmuh/react-aws-eks-github-actions:latest
+          docker push vaishnaviisasre19/react-aws-eks-github-actions:latest
         env:
           DOCKER_CLI_ACI: 1
 
@@ -35,5 +35,5 @@ jobs:
             docker rm react-aws-eks-github-actions || true
   
       - name: Run the container on AWS EC2 for testing
-        run: docker run -d --name react-aws-eks-github-actions -p 3000:3000 codewithmuh/react-aws-eks-github-actions:latest
+        run: docker run -d --name react-aws-eks-github-actions -p 3000:3000 vaishnaviisasre19/react-aws-eks-github-actions:latest
   
