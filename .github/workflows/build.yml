@@ -1,6 +1,6 @@
 name: Code Build Workflow
 
-on:
+on: 
     workflow_run:
       workflows: 
         - Sonar Code Review Workflow
